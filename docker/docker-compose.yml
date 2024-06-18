@@ -403,6 +403,7 @@ services:
       - ./volumes/db/logs.sql:/docker-entrypoint-initdb.d/migrations/99-logs.sql:Z
       # Use named volume to persist pgsodium decryption key between restarts
       - db-config:/etc/postgresql-custom
+      - /BigBoi/compose/supabase/scripts:/scripts:ro
 
   vector:
     container_name: supabase-vector
